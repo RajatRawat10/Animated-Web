@@ -3,7 +3,7 @@ const scroll = new LocomotiveScroll({
     smooth: true
 });
 
-//function for the nav bar animation
+//function for the navbar and hero animation
 function heroPageAni() {
     var tl = gsap.timeline();
     tl.from(".nav", {
@@ -32,7 +32,7 @@ function heroPageAni() {
 
 
 
-//function for the circle shape 
+//function for the circle shape change
 const circle = document.querySelector(".rotate-circle");
 var timeout;
 function circleadjust() {
@@ -60,7 +60,7 @@ function circleadjust() {
     })
 }
 
-//function for cursor mousemove 
+//function for cursor circle mousemove 
 function circleMouseFollower(xscale, yscale) {
     // Mouse move → follow cursor
     window.addEventListener("mousemove", function (e) {
@@ -70,21 +70,45 @@ function circleMouseFollower(xscale, yscale) {
 
 circleadjust();
 circleMouseFollower();
-// heroPageAni();
+heroPageAni();
 
-let element = document.querySelectorAll(".second-subhead")
-element.forEach(function (element) {
+document.querySelectorAll(".second-subhead").forEach(function (element) {
+    //variable for the rotation
+    var rotate = 0;
+    var diffrotate = 0;
+
+    const img = element.querySelector("img");
+    img.style.position = "absolute"; // Ensure absolute positioning
+
     element.addEventListener("mousemove", function (e) {
-        var diffy = e.clientY - element.getBoundingClientRect().top;
-        //    var diffx = e.clientX - element.getBoundingClientRect().left;
+        const rect = element.getBoundingClientRect();
+        const diffX = e.clientX - rect.left; // cursor position relative to element
+        const diffY = e.clientY - rect.top;
 
+        //writing fot the rotation of the image
+        diffrotate = e.clientX - rotate;
+        rotate = e.clientX;
 
-        gsap.to(element.querySelector("img"), {
+        // Get image size to center it on the cursor
+        const imgWidth = img.offsetWidth;
+        const imgHeight = img.offsetHeight;
+
+        gsap.to(img, {
             opacity: 1,
-            ease: Power1.out,
-            top: diffy,
-            left: e.clientX,
+            ease: "power3.out",
+            top: diffY - imgHeight / 2, // center vertically
+            left: diffX - imgWidth / 2, // center horizontally
+            duration: 0.2,
+            rotate: gsap.utils.clamp(-20, 20, diffrotate)
         });
+    });
 
+    element.addEventListener("mouseleave", function () {
+        gsap.to(img, {
+            opacity: 0,
+            duration: 0.4,
+            ease: "power3.out"
+        });
     });
 });
+
