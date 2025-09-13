@@ -1,0 +1,284 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "General Sans";
+    box-sizing: border-box;
+
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+
+}
+
+.rotate-circle {
+    background-color: white;
+    width: 12px;
+    height: 12px;
+    border-radius: 100%;
+    position: absolute;
+    z-index: 9999;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.10s linear;
+    transform: translate(-50%, -50%);
+
+}
+
+.bounding {
+    width: fit-content;
+    overflow: hidden;
+}
+
+.bounding .boundingelem {
+    transform: translateY(100%);
+}
+
+#main {
+    width: 100%;
+    background-color: black;
+}
+
+.hero {
+    width: 100%;
+    height: 100vh;
+    background: black;
+    color: white;
+    position: relative;
+}
+
+.nav {
+    width: 100%;
+    padding: 20px 30px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+
+}
+
+.heading {
+    color: white;
+    margin-top: 60px;
+}
+
+.heading h1 {
+    font-size: 10vw;
+    text-transform: uppercase;
+    font-weight: 800;
+    line-height: 1;
+    opacity: 0.7;
+    margin-left: 30px;
+
+}
+
+.heading .secondh1 {
+    margin-left: 180px;
+
+}
+
+.blocktext {
+    width: fit-content;
+    /* background-color: red; */
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    flex-direction: column;
+
+}
+
+.blocktext h5 {
+    text-align: right;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.subheadings {
+    margin-top: 90px;
+    padding: 2vw;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+
+}
+
+.subheadings h5 {
+    text-align: right;
+    margin-top: 7px;
+    font-size: 1vw;
+    text-transform: uppercase;
+}
+
+.hero-footer {
+    position: absolute;
+    bottom: 1%;
+    width: 100%;
+    padding: 0 2vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero-footer a {
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.iconset {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+
+}
+
+.hero-footer .circle i {
+    width: 20px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgb(247, 243, 243);
+    font-size: 25px;
+    color: black;
+}
+
+.second {
+    width: 100%;
+    /* height: 100vh; */
+    padding-right: 10vw;
+    padding-left: 3vw;
+    background-color: black;
+    color: white;
+    padding-top: 200px;
+}
+
+.second-subhead {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3vw 0;
+    border-top: 1px solid rgb(178, 197, 182);
+}
+
+.second-subhead h1 {
+    font-size: 7vw;
+    opacity: 0.6;
+    text-transform: uppercase;
+
+}
+
+.second-subhead .subhead-last {
+    border-bottom: 1px solid rgb(178, 197, 182);
+}
+
+.second-subhead img {
+    opacity: 0;
+    height: 130%;
+    z-index: 10;
+    position: absolute;
+
+}
+
+.about {
+    background-color: black;
+    color: white;
+    width: 100%;
+    /* height: 100vh; */
+    display: flex;
+    align-items: center;
+    gap: 70px;
+    padding: 10vw 5vw;
+    padding-left: 35vw;
+
+}
+
+.about img {
+    width: 250px;
+    height: 250px;
+}
+
+.about-desc {
+    width: 25rem;
+}
+
+.about-desc h5 {
+    opacity: 0.6;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.about-desc p {
+    padding: 10px 0;
+    font-size: 18px;
+    /* line-height: 1.7; */
+}
+
+.about-desc a {
+    border: 1px solid white;
+    text-decoration: none;
+    border-radius: 30px;
+    padding: 5px 15px;
+    color: white;
+
+}
+
+.mid-head {
+    background-color: black;
+    padding: 30px;
+    padding-bottom: 7vw;
+    color: white;
+}
+
+.mid-head1 {
+    opacity: 0.6;
+    text-transform: uppercase;
+}
+
+.mid-head2 {
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.main-footer {
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+
+}
+
+.first-pt {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.first-pt span {
+    padding: 0 15px;
+}
+
+.second-pt {
+    display: flex;
+    gap: 30px;
+
+}
+
+.second-pt a {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+}
